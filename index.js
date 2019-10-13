@@ -9,6 +9,9 @@ function start() {
 function dogImage() {
     console.log("You clicked on the dog button!")
     // fetch an image of a dog
+    fetch("https://dog.ceo/api/breeds/image/random")
+        .then(res => res.json())
+        .then(res => plugImage(res.message, "dog"))
     getFacts()
 }
 
@@ -28,4 +31,16 @@ function getFacts() {
 
 function enterText(text) {
     document.getElementById("fact").innerHTML = text
+}
+
+function plugImage(url, type) {
+    img = document.querySelector("img")
+    img.src = url
+    if (type === "dog") {
+        img.alt = "dog"
+        img.title = "dog"
+    } else {
+        img.alt = "cat"
+        img.title = "cat"
+    }
 }
