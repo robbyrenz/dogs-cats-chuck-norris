@@ -18,15 +18,18 @@ function dogImage() {
 function catImage() {
     console.log("You clicked on the cat button!")
     // fetch an image of a cat
+    fetch("https://api.thecatapi.com/v1/images/search")
+        .then(res => res.json())
+        .then(res => plugImage(res[0].url, "cat"))
     getFacts()
 }
 
 function getFacts() {
+    // get random Chuck Norris facts!
     enterText("loading...")
     fetch("https://api.chucknorris.io/jokes/random")
         .then(res => res.json())
         .then(res => enterText(res.value))
-
 }
 
 function enterText(text) {
