@@ -36,5 +36,11 @@ button:hover {
 
 #fact {
     font-size: 4em;
-    margin-top: 5em;
+    margin-top: 0.5em;
+}
+
+img {
+	display: block;
+	margin-top: 0.5em;
+	margin: 1em auto 0 auto;
 }
